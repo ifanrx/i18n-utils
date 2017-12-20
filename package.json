@@ -1,0 +1,26 @@
+{
+  "name": "i18n-utils",
+  "version": "1.0.0",
+  "description": "i18n utils",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ifanrx/i18n-utils.git"
+  },
+  "keywords": [
+    "i18n"
+  ],
+  "author": "ifanrx",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ifanrx/i18n-utils/issues"
+  },
+  "homepage": "https://github.com/ifanrx/i18n-utils#readme",
+  "dependencies": {
+    "narp": "github:ifanrx/narp",
+    "node-gettext": "^2.0.0"
+  }
+}
