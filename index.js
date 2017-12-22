@@ -13,7 +13,7 @@ function getUserLanguage() {
 }
 
 function localeInit(locales) {
-  if (!locales) throw new Error('params locales is requried')
+  if (!locales) throw new Error('param locales is requried')
 
   const locale = getUserLanguage()
   window.__locale = locale
