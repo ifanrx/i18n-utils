@@ -1,6 +1,6 @@
 import nodeGettext from 'node-gettext'
 
-window.__gt = window.__gt || new nodeGettext()
+window.ifrxGT = window.ifrxGT || new nodeGettext()
 
 function getUserLanguage() {
   const zhRegexr = /zh/i
@@ -17,10 +17,10 @@ function localeInit(locales) {
 
   const locale = getUserLanguage()
   window.__locale = locale
-  window.__gt.setLocale(locale)
+  window.ifrxGT.setLocale(locale)
 
-  window.__gt.addTranslations('en', 'messages', locales['en'])
-  window.__gt.addTranslations('zh', 'messages', locales['zh-CN'])
+  window.ifrxGT.addTranslations('en', 'messages', locales['en'])
+  window.ifrxGT.addTranslations('zh', 'messages', locales['zh-CN'])
 }
 
 const interpolation = (msg, args = {}) => {
@@ -36,9 +36,9 @@ const interpolation = (msg, args = {}) => {
 
 const translate = (msg, args = {}, context = false) => {
   if (context) {
-    msg = window.__gt.pgettext(context, msg)
+    msg = window.ifrxGT.pgettext(context, msg)
   } else {
-    msg = window.__gt.gettext(msg)
+    msg = window.ifrxGT.gettext(msg)
   }
 
   msg = interpolation(msg, args)
@@ -52,9 +52,9 @@ const pluralTranslate = (msg, msgPlural, args = {}, context = false) => {
   }
 
   if (context) {
-    msg = window.__gt.npgettext(context, msg, msgPlural, args.count)
+    msg = window.ifrxGT.npgettext(context, msg, msgPlural, args.count)
   } else {
-    msg = window.__gt.ngettext(msg, msgPlural, args.count)
+    msg = window.ifrxGT.ngettext(msg, msgPlural, args.count)
   }
 
   msg = interpolation(msg, args)
