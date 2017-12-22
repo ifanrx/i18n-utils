@@ -1,5 +1,7 @@
 import nodeGettext from 'node-gettext'
 
+window.__gt = window.__gt || new nodeGettext()
+
 function getUserLanguage() {
   const zhRegexr = /zh/i
 
@@ -11,7 +13,8 @@ function getUserLanguage() {
 }
 
 function localeInit(locales) {
-  window.__gt = window.__gt || new nodeGettext()
+  if (!locales) throw new Error('params locales is requried')
+
   const locale = getUserLanguage()
   window.__locale = locale
   window.__gt.setLocale(locale)
