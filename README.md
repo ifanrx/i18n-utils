@@ -40,6 +40,13 @@ import {_ as _t} from 'i18n-utils/util'
 
 ## 初始化
 
+```javascript
+import {localeInit} from 'i18n-utils/util'
+import locales form 'locales.json' // 项目所需的语言包文件
+
+localeInit(locales)
+```
+
 
 
 ## 使用
