@@ -1,4 +1,4 @@
-import nodeGettext from 'node-gettext'
+var nodeGettext = require('node-gettext')
 
 window.ifrxGT = window.ifrxGT || new nodeGettext()
 
@@ -23,7 +23,7 @@ function localeInit(locales) {
   window.ifrxGT.addTranslations('zh', 'messages', locales['zh-CN'])
 }
 
-const interpolation = (msg, args = {}) => {
+function interpolation(msg, args = {}) {
   msg = msg.replace(/\\{/g, '\u007B').replace(/\\}/g, '\u007D')
 
   for (let key in args) {
@@ -34,7 +34,7 @@ const interpolation = (msg, args = {}) => {
   return msg
 }
 
-const translate = (msg, args = {}, context = false) => {
+function translate(msg, args = {}, context = false) {
   if (context) {
     msg = window.ifrxGT.pgettext(context, msg)
   } else {
@@ -46,7 +46,7 @@ const translate = (msg, args = {}, context = false) => {
   return msg
 }
 
-const pluralTranslate = (msg, msgPlural, args = {}, context = false) => {
+function pluralTranslate(msg, msgPlural, args = {}, context = false) {
   if (args.count === undefined) {
     args.count = 1
   }
@@ -70,11 +70,11 @@ function pluralTranslateWithContext(context, msg, msgPlural, args) {
   return pluralTranslate(msg, msgPlural, args, context)
 }
 
-export {
-  translate as _,
-  pluralTranslate as _p,
-  translateWithContext as _c,
-  pluralTranslateWithContext as _cp,
+module.exports = {
+  _: translate,
+  _p: pluralTranslate,
+  _c: translateWithContext,
+  _cp: pluralTranslateWithContext,
   getUserLanguage,
-  localeInit,
+  localeInit
 }
