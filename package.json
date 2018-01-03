@@ -2,7 +2,7 @@
   "name": "i18n-utils",
   "version": "2.0.0",
   "description": "i18n utils",
-  "main": "lib/app.js",
+  "main": "lib/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "babelify": "rm -rf lib/ && babel src -d lib"

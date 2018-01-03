@@ -1,1 +1,1 @@
-require('./lib/index.js')
+import './lib'
