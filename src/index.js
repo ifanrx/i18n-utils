@@ -15,10 +15,7 @@ function getUserLanguage() {
 function localeInit(locales) {
   if (!locales) throw new Error('param locales is requried')
 
-  const locale = getUserLanguage()
-  window.__locale = locale
-  window.ifrxGT.setLocale(locale)
-
+  _setIfrxGTLocale()
   window.ifrxGT.addTranslations('en', 'messages', locales['en'])
   window.ifrxGT.addTranslations('zh', 'messages', locales['zh-CN'])
 }
@@ -68,6 +65,11 @@ function translateWithContext(context, msg, args) {
 
 function pluralTranslateWithContext(context, msg, msgPlural, args) {
   return pluralTranslate(msg, msgPlural, args, context)
+}
+
+function _setIfrxGTLocale() {
+  const locale = getUserLanguage()
+  window.ifrxGT.setLocale(locale)
 }
 
 module.exports = {

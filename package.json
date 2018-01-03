@@ -1,6 +1,6 @@
 {
   "name": "i18n-utils",
-  "version": "2.0.0",
+  "version": "2.0.2",
   "description": "i18n utils",
   "main": "lib/index.js",
   "scripts": {
@@ -14,7 +14,7 @@
   "keywords": [
     "i18n"
   ],
-  "author": "ifanrx",
+  "author": "zhushasha",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/ifanrx/i18n-utils/issues"
