@@ -2,10 +2,10 @@
   "name": "i18n-utils",
   "version": "2.0.0",
   "description": "i18n utils",
-  "main": "index.js",
+  "main": "lib/app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "rm -rf dist/ && NODE_ENV=production webpack --config webpack.dev.js --progress --colors"
+    "babelify": "rm -rf lib/ && babel src -d lib"
   },
   "repository": {
     "type": "git",
@@ -24,11 +24,11 @@
     "node-gettext": "^2.0.0"
   },
   "devDependencies": {
+    "babel-cli": "^6.26.0",
     "babel-core": "^6.26.0",
     "babel-loader": "^7.1.2",
+    "babel-preset-env": "^1.6.1",
     "babel-preset-es2015": "^6.24.1",
-    "babel-preset-stage-0": "^6.24.1",
-    "webpack": "^3.10.0",
-    "webpack-notifier": "^1.5.0"
+    "babel-preset-stage-0": "^6.24.1"
   }
 }
